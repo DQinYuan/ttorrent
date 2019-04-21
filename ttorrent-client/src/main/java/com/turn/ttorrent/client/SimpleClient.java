@@ -77,6 +77,10 @@ public class SimpleClient {
     semaphore.acquire();
   }
 
+  public int getPeers(){
+    return communicationManager.getPeers().size();
+  }
+
   private TorrentManager startDownloading(String torrentFile, String downloadDir, InetAddress iPv4Address) throws IOException {
     communicationManager.start(iPv4Address);
     return communicationManager.addTorrent(torrentFile, downloadDir);
